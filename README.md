@@ -1,5 +1,9 @@
 # pact-kotlin-spring-poc
 
+## What is Pact Consumer Driven Test?
+![alt text](https://docs.pact.io/img/how-pact-works/summary.png)
+
+
 ## 1. Pact Broker Set Up
 ```
 docker-compose up
