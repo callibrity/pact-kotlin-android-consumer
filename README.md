@@ -23,6 +23,7 @@ pact {
 By default, the plugin expects the contracts to be available at $buildDir/pacts
 
 ```./gradlew test``` to create a contract under /build/pacts
+
 ```./gradlew pactPublish``` to publish the contract to pact broker. Version has to be updated everytime changes have been published
 
 ## 3. Maven
@@ -64,9 +65,13 @@ and <plugin> to specify pact broker's url, userName and password.
 ```
 
 ```./mvnw verify``` to verify locally
+
 ```./mvnw pact:publish``` to publish (if this is consumer service)
+
 ```./mvnw verify -Dpact.verifier.publishResults=true -Dpact.provider.version=1.0-SNAPSHOT``` to verify and publish the result in pact broker
+
 ```./mvnw pact:can-i-deploy -Dpacticipant='consumerApp' -Dlatest=true```
+
 
 
 
