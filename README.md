@@ -12,7 +12,22 @@ Check docker-compose.yaml file to update server, username, and password.
 By default (this file) if not changed, http://localhost:9292 (with username/password: pact_workshop/pact_workshop)
 
 ## 2. Gradle
-In gradle.build file, update pactBrokerUrl, username, and password accordingly.
+In gradle.build file, add dependencies:
+
+```
+plugins {
+    ...
+    id("au.com.dius.pact")
+}
+
+...
+
+    testImplementation("au.com.dius.pact.consumer:java8:4.1.9")
+    testImplementation("au.com.dius.pact.consumer:junit:4.4.4")
+    testImplementation("au.com.dius:pact-jvm-provider-gradle_2.11:3.5.0")
+```
+
+And the following pact broker configuration. Update pactBrokerUrl, username, and password accordingly.
 ```
 pact {
  publish {
